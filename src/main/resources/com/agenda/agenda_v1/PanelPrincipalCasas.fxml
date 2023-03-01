@@ -1,0 +1,1838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.agenda_v1.PanelPrincipalCasasController">
+   <children>
+      <Pane fx:id="panelAlumnos" layoutX="-2.0" layoutY="-1.0" prefHeight="691.0" prefWidth="1044.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0">
+         <children>
+            <Pane fx:id="_panelMensajeria_alumnos" layoutX="234.0" layoutY="5.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="821.0" fitWidth="854.0" layoutX="-21.0" layoutY="-125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_mensajeria" layoutX="262.0" layoutY="49.0" text="Mensajería">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                  </Label>
+                  <TabPane layoutX="78.0" layoutY="120.0" prefHeight="513.0" prefWidth="695.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab fx:id="tab_pane_novedades1" text="Enviar mensajes">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="103.0" layoutY="65.0" text="Alumno:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="105.0" layoutY="125.0" text="Mensaje:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="combo_mensajeria_alumnos1" layoutX="231.0" layoutY="61.0" prefHeight="25.0" prefWidth="215.0" />
+                                    <TextArea fx:id="textArea_menaje_editar1" layoutX="93.0" layoutY="162.0" prefHeight="149.0" prefWidth="480.0" />
+                                    <Button fx:id="botonA_enviar_mensajeria" layoutX="288.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#botonGuardarMensajeria_Alumnos" text="Enviar">
+                                       <font>
+                                          <Font name="Harrington" size="24.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab fx:id="tab_pane_historico1" text="Mensajes">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaA_listar_mensajes1" layoutX="19.0" layoutY="17.0" prefHeight="200.0" prefWidth="617.0">
+                                       <columns>
+                                          <TableColumn fx:id="columP_Id_mensajeria1" prefWidth="86.88888549804688" text="Id" />
+                                          <TableColumn fx:id="columP_nombre_mensajeria1" prefWidth="90.44442749023438" text="Nombre" />
+                                          <TableColumn fx:id="columP_apellidos_mensajeria1" prefWidth="189.33328247070312" text="Apellidos" />
+                                          <TableColumn fx:id="columP_fecha_mensajeria1" prefWidth="135.3333740234375" text="Fecha" />
+                                          <TableColumn fx:id="columP_leidos_mensajeria1" prefWidth="114.66668701171875" text="Leído" />
+                                       </columns>
+                                    </TableView>
+                                    <TextArea fx:id="textarea_mensajeria1" layoutX="21.0" layoutY="269.0" prefHeight="190.0" prefWidth="503.0" />
+                                    <Label fx:id="label_mensaje_alumnos" layoutX="26.0" layoutY="234.0" text="Mensaje:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="boton_mostrarMensaje_alumnos" layoutX="302.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#mostrar_mensajesAlumnos" text="Mostrar Mensaje" />
+                                    <Button fx:id="boton_cerrar" layoutX="563.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#boton_cerrar_mensajeA" text="Cerrar" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TabPane>
+               </children>
+            </Pane>
+            <Pane fx:id="panelMenuLateral" prefHeight="693.0" prefWidth="228.0">
+               <children>
+                  <ImageView fx:id="_imagen_bandera" fitHeight="390.0" fitWidth="229.0" layoutX="-1.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/casas/BanderaRoja.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="_imgEScudo" fitHeight="184.0" fitWidth="173.0" layoutX="30.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/escudos/rojo.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="-3.0" layoutY="381.0" prefHeight="312.0" prefWidth="232.0">
+                     <children>
+                        <Button fx:id="_boton_sala_comun" mnemonicParsing="false" onAction="#cambiarPanelSalaComun" prefHeight="74.0" prefWidth="229.0" styleClass="boton" text="Sala Común" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_asignaturas" mnemonicParsing="false" onAction="#cambiarPanelAsignaturas" prefHeight="74.0" prefWidth="229.0" text="Asignaturas" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_tareas" mnemonicParsing="false" onAction="#cambiarPanelTareas" prefHeight="74.0" prefWidth="229.0" text="Tareas" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_notas" mnemonicParsing="false" onAction="#cambiarPanelNotas" prefHeight="92.0" prefWidth="229.0" text="Notas" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="botonSalirAlumno" layoutX="80.0" layoutY="309.0" mnemonicParsing="false" onAction="#cerrarTodo" onMouseClicked="#salirProg" text="SALIR" textFill="#e2a825">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botonSalirAlumno1" layoutX="57.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#cerrarSesion" text="Cerrar Sesión" textFill="#e2a825">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Text fx:id="pruebaInicio" layoutX="23.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hola" wrappingWidth="83.267578125">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="panelSalaComun" layoutX="225.0" layoutY="-3.0" prefHeight="695.0" prefWidth="816.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="829.0" fitWidth="865.0" layoutX="-4.0" layoutY="-125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_sala_comun" layoutX="125.0" layoutY="34.0" text="Sala común de Gryffindor">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <TableView fx:id="_tablaAlum_salaComun" layoutX="105.0" layoutY="192.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="_columAluSema_asignatura" prefWidth="145.5555419921875" text="Asignaturas" />
+                      <TableColumn fx:id="_columAluSema_profesor" prefWidth="161.77780151367188" text="Profesor" />
+                        <TableColumn fx:id="_columAluSema_tareas" prefWidth="110.0" text="Tareas" />
+                        <TableColumn fx:id="_columAluSema_tipo" prefWidth="92.6666259765625" text="Tipo" />
+                        <TableColumn fx:id="_columAluSema_fecha" editable="false" minWidth="0.0" prefWidth="130.22222900390625" text="Fecha" />
+                    </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelA_planing" layoutX="102.0" layoutY="124.0" text="Planning Semanal" underline="true">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="_progressBar_Trimestre" layoutX="98.0" layoutY="591.0" prefHeight="18.0" prefWidth="128.0" progress="0.0" />
+                  <Label fx:id="labelA_trimestre" layoutX="113.0" layoutY="569.0" text="Curso escolar">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font></Label>
+                  <Label fx:id="labelA_mensa" layoutX="306.0" layoutY="569.0" text="Mensajería">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font></Label>
+                  <Label fx:id="labelA_configura" layoutX="458.0" layoutY="569.0" text="Configuración">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font></Label>
+                  <ImageView fitHeight="73.0" fitWidth="118.0" layoutX="111.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="abrir_mensajeria_alumnos" fitHeight="92.0" fitWidth="128.0" layoutX="298.0" layoutY="479.0" onMouseClicked="#cambiarMensajeria_alumnos" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/png6egg%20(11).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="63.0" fitWidth="92.0" layoutX="458.0" layoutY="493.0" onMouseClicked="#cambiarConfiguracion" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imagen_recordadoraA" fitHeight="35.0" fitWidth="33.0" layoutX="360.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/recordadora_roja.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="panelAsignaturas" layoutX="221.0" layoutY="-2.0" prefHeight="695.0" prefWidth="823.0">
+               <children>
+                  <ImageView fitHeight="820.0" fitWidth="837.0" layoutY="-126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_asisgnaturas" layoutX="274.0" layoutY="28.0" prefHeight="62.0" prefWidth="289.0" text="Asignaturas">
+                     <font>
+                        <Font name="Harrington" size="42.0" />
+                     </font>
+                     
+                  </Label>
+                  <Pane layoutX="28.0" layoutY="108.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaPociones" fitHeight="79.0" fitWidth="78.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(5).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_posiciones" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="109.0" text="Pociones">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="213.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaTransformaciones" fitHeight="73.0" fitWidth="143.0" layoutY="28.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(4).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_transformaciones" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Transformaciones">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="313.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaEncantamientos" fitHeight="89.0" fitWidth="100.0" layoutX="8.0" layoutY="12.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pn5gegg%20(10).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_encantamientos" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Encantamientos">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="418.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaDefensa" fitHeight="79.0" fitWidth="78.0" layoutX="14.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngerrgg%20(2).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_defensa1" layoutX="115.0" layoutY="22.0" prefHeight="35.0" prefWidth="215.0" text="Defensa contra las">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_defensa2" layoutX="115.0" layoutY="53.0" prefHeight="25.0" prefWidth="199.0" text="artes oscuras">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="108.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaCriaturas" fitHeight="78.0" fitWidth="96.0" layoutX="8.0" layoutY="19.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/png7egg%20(12).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_cuidado1" layoutX="111.0" layoutY="21.0" prefHeight="35.0" prefWidth="199.0" text="Cuidado de ">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_cuidado2" layoutX="111.0" layoutY="49.0" prefHeight="35.0" prefWidth="199.0" text="criaturas mágicas">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="213.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaHistoria" fitHeight="67.0" fitWidth="96.0" layoutX="14.0" layoutY="25.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/libros.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_historia1" layoutX="112.0" layoutY="25.0" prefHeight="42.0" prefWidth="199.0" text="Historia de la">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_historia2" layoutX="112.0" layoutY="53.0" prefHeight="36.0" prefWidth="199.0" text="magia">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="313.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaVuelo" fitHeight="62.0" fitWidth="89.0" layoutX="14.0" layoutY="22.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/escoba.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_vuelo" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Clases de vuelo">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="533.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaRunas" fitHeight="74.0" fitWidth="72.0" layoutX="26.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(6).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_runas" layoutX="117.0" layoutY="36.0" prefHeight="42.0" prefWidth="207.0" text="Runas antiguas">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="405.0" layoutY="418.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaAdivinacion" fitHeight="62.0" fitWidth="89.0" layoutX="35.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(7).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_adivinacion" layoutX="126.0" layoutY="31.0" prefHeight="42.0" prefWidth="134.0" text="Adivinación">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="panelTareas" layoutX="221.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0" visible="false">
+               <children>
+                  <ImageView fitHeight="820.0" fitWidth="843.0" layoutY="-126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_tareas" layoutX="347.0" layoutY="46.0" prefHeight="62.0" prefWidth="174.0" text="Tareas">
+                     <font>
+                        <Font name="Harrington" size="50.0" />
+                     </font>
+                    
+                  </Label>
+                  <TableView fx:id="_tbA_tareas" layoutX="58.0" layoutY="138.0" prefHeight="199.0" prefWidth="715.0">
+                    <columns>
+                        <TableColumn fx:id="_columA_tareaId" prefWidth="42.39996337890625" text="Id" />
+                      <TableColumn fx:id="_columA_tareaAsignatura" prefWidth="155.19998168945312" text="Asignatura" />
+                      <TableColumn fx:id="_columA_tareaTipo" prefWidth="88.800048828125" text="Tipo" />
+                        <TableColumn fx:id="_columA_tareaNombre" prefWidth="120.800048828125" text="Nombre" />
+                        <TableColumn fx:id="_columA_tareafecha_fin" prefWidth="123.20001220703125" text="Fecha Entrega" />
+                        <TableColumn fx:id="_columA_tareaArchivo" prefWidth="180.800048828125" text="Archivo" />
+                    </columns>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelA_subirDocumento" layoutX="294.0" layoutY="370.0" text="Subir documento">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="79.0" fitWidth="96.0" layoutX="157.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/reliquias.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_comentario" layoutX="292.0" layoutY="459.0" text="Añadir comentario">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="79.0" fitWidth="96.0" layoutX="157.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pn5gegg%20(10).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="78.0" layoutX="165.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/llaveAlada.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="boton_mas" layoutX="533.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#fileChooser" text="+" />
+                  <TextField fx:id="_tfDocumentoSubir" layoutX="294.0" layoutY="390.0" prefHeight="25.0" prefWidth="232.0" />
+                  <TextArea fx:id="_tfComentario" layoutX="290.0" layoutY="479.0" prefHeight="56.0" prefWidth="227.0" />
+                  <Button fx:id="boton_guardarComentario" layoutX="293.0" layoutY="578.0" mnemonicParsing="false" onMouseClicked="#GuardarDocumentoComentario" prefHeight="48.0" prefWidth="227.0" text="Guardar Cambios" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelNotas" layoutX="221.0" layoutY="-3.0" prefHeight="695.0" prefWidth="823.0" visible="false">
+               <children>
+                  <ImageView fitHeight="806.0" fitWidth="838.0" layoutY="-112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_notas" layoutX="348.0" layoutY="14.0" prefHeight="62.0" prefWidth="189.0" text="Notas">
+                     <font>
+                        <Font name="Harrington" size="47.0" />
+                     </font>
+                    
+                  </Label>
+                  <TableView fx:id="_tablaAlu_notas" layoutX="106.0" layoutY="108.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="_columAlu_notas_asignatura" prefWidth="117.99996948242188" text="Asignatura" />
+                      <TableColumn fx:id="_columAlu_notas_tipo" prefWidth="108.0" text="Tipo" />
+                        <TableColumn fx:id="_columAlu_notas_nombre" prefWidth="138.6666259765625" text="Nombre" />
+                        <TableColumn fx:id="_columAlu_notas_nota" prefWidth="78.6666259765625" text="Nota" />
+                        <TableColumn fx:id="_columAlu_notas" prefWidth="153.3333740234375" text="Comentario" />
+                    </columns>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelA_seleccionaAsignatura" layoutX="106.0" layoutY="408.0" text="Selecciona Asignatura">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust>
+                           <input>
+                              <Bloom />
+                           </input>
+                        </ColorAdjust>
+                     </effect>
+                  </Label>
+                  <ComboBox fx:id="_jcFilto_notas_alumno" layoutX="339.0" layoutY="408.0" prefHeight="25.0" prefWidth="254.0">
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </ComboBox>
+                  <ImageView fx:id="_imagNotas1" fitHeight="42.0" fitWidth="64.0" layoutX="106.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(5).png" />
+                     </image></ImageView>
+                  <Label fx:id="_labelNotas1" layoutX="189.0" layoutY="492.0" prefHeight="24.0" prefWidth="35.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font></Label>
+                  <ImageView fx:id="_imagNotas2" fitHeight="42.0" fitWidth="64.0" layoutX="106.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="_labelNotas5" layoutX="525.0" layoutY="492.0" prefHeight="24.0" prefWidth="33.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_imagNotas3" fitHeight="42.0" fitWidth="64.0" layoutX="455.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/png7egg%20(12).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="_labelNotas2" layoutX="190.0" layoutY="575.0" prefHeight="24.0" prefWidth="33.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_imagNotas4" fitHeight="42.0" fitWidth="64.0" layoutX="283.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/escoba.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="_labelNotas4" layoutX="361.0" layoutY="575.0" prefHeight="24.0" prefWidth="68.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_imagNotas5" fitHeight="42.0" fitWidth="64.0" layoutX="283.0" layoutY="483.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/libros.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="_labelNotas3" layoutX="365.0" layoutY="492.0" prefHeight="24.0" prefWidth="68.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_labelNotas6" layoutX="525.0" layoutY="575.0" prefHeight="24.0" prefWidth="33.0" text="9,8">
+                     <font>
+                        <Font name="Harrington" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_imagNotas6" fitHeight="42.0" fitWidth="64.0" layoutX="455.0" layoutY="566.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(7).png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="89.0" layoutY="448.0" prefHeight="201.0" prefWidth="485.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="paneConfiguracion" layoutX="222.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0" visible="false">
+               <children>
+                  <ImageView fitHeight="817.0" fitWidth="823.0" layoutY="-112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_configuracion" layoutX="201.0" layoutY="55.0" prefHeight="62.0" prefWidth="350.0" text="Configuración">
+                     <font>
+                        <Font name="Harrington" size="47.0" />
+                     </font>
+                     
+                  </Label>
+                  <Label fx:id="labelA_nombre" layoutX="109.0" layoutY="160.0" text="Nombre:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfNombreEstudiante" layoutX="309.0" layoutY="165.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelA_dni" layoutX="107.0" layoutY="253.0" text="DNI:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfApellidosEstudiante" layoutX="309.0" layoutY="213.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelA_curso" layoutX="109.0" layoutY="445.0" text="Curso:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfEmailEstudiante" layoutX="309.0" layoutY="352.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelA_apellidos" layoutX="107.0" layoutY="208.0" text="Apellidos">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfDniEstudiante" layoutX="309.0" layoutY="258.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelA_email" layoutX="111.0" layoutY="347.0" text="Email:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTelefonoEstudiante" layoutX="309.0" layoutY="305.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelA_telefono" layoutX="107.0" layoutY="300.0" text="Teléfono:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelA_fecha" layoutX="107.0" layoutY="397.0" text="F. Nacimiento:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfFechaNacEstudiante" layoutX="309.0" layoutY="402.0" prefHeight="25.0" prefWidth="254.0" />
+                  <ImageView fx:id="_imagen_perfil" fitHeight="92.0" fitWidth="102.0" layoutX="674.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/WhatsApp%20Image%202022-12-08%20at%2017.45.47.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="216.0" fitWidth="222.0" layoutX="620.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/Untitl3ed.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="_boton_sala_comun1" layoutX="262.0" layoutY="597.0" mnemonicParsing="false" onMouseClicked="#altaEstudiante" prefHeight="57.0" prefWidth="242.0" styleClass="boton" text="Guardar Datos" textFill="#e2a825">
+                     <font>
+                        <Font name="Harrington" size="30.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="labelA_pass" layoutX="107.0" layoutY="487.0" text="Contraseña:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="_cbCursos" layoutX="308.0" layoutY="449.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Button fx:id="_botonA_cambiar_Perfil" layoutX="653.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#cambiarImagenPerfil" text="Cambiar Imagen" />
+                  <PasswordField fx:id="_tfPassEstudiante" layoutX="308.0" layoutY="489.0" prefHeight="25.0" prefWidth="254.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="paneAsignaturasIndividual" layoutX="218.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0" visible="false">
+               <children>
+                  <ImageView fitHeight="817.0" fitWidth="823.0" layoutY="-112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="_tituloAsignatura" layoutX="242.0" layoutY="63.0" text="POCIONES">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_imagenAsignatura" fitHeight="116.0" fitWidth="89.0" layoutX="118.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/asignaturas/pociones.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_profesor" layoutX="118.0" layoutY="502.0" text="Profesor:">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="_nombreProfesorAsignatura" layoutX="266.0" layoutY="502.0" prefHeight="32.0" prefWidth="207.0" text="Albus Dumbledore">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="78.0" fitWidth="81.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#atrasAsignatura" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/otros/atras.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imagen_texto_asignatura" fitHeight="317.0" fitWidth="646.0" layoutX="82.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Pane fx:id="panelSelecionAsignatura" layoutX="222.0" layoutY="10.0" prefHeight="695.0" prefWidth="854.0" visible="false">
+               <children>
+                  <ImageView fitHeight="869.0" fitWidth="850.0" layoutX="-4.0" layoutY="-145.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelA_selecionAsignaturas" layoutX="145.0" layoutY="31.0" prefHeight="62.0" prefWidth="525.0" text="Selección de Asignaturas">
+                     <font>
+                        <Font name="Harrington" size="42.0" />
+                     </font>
+                     
+                  </Label>
+                  <Pane layoutX="28.0" layoutY="108.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaPociones11" fitHeight="79.0" fitWidth="78.0" layoutX="15.0" layoutY="16.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(5).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionPociones" layoutX="114.0" layoutY="34.0" prefHeight="42.0" prefWidth="109.0" text="Pociones">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                        <CheckBox fx:id="_checkPociones" layoutX="-13.0" layoutY="40.0" mnemonicParsing="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="213.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaTransformaciones11" fitHeight="73.0" fitWidth="143.0" layoutY="28.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(4).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionTransformaciones" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Transformaciones">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                        <CheckBox fx:id="_checkTransformaciones" layoutX="-10.0" layoutY="40.0" mnemonicParsing="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="313.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaEncantamientos11" fitHeight="89.0" fitWidth="100.0" layoutX="8.0" layoutY="12.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pn5gegg%20(10).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionEncantamientos" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Encantamientos">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="418.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaDefensa11" fitHeight="79.0" fitWidth="78.0" layoutX="14.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngerrgg%20(2).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionDefensa1" layoutX="115.0" layoutY="22.0" prefHeight="35.0" prefWidth="215.0" text="Defensa contra las">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_seleccionDefensa2" layoutX="115.0" layoutY="53.0" prefHeight="25.0" prefWidth="199.0" text="artes oscuras">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="108.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaCriaturas11" fitHeight="78.0" fitWidth="96.0" layoutX="8.0" layoutY="19.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/png7egg%20(12).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionCuidado1" layoutX="111.0" layoutY="21.0" prefHeight="35.0" prefWidth="199.0" text="Cuidado de ">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_seleccionCuidado2" layoutX="111.0" layoutY="49.0" prefHeight="35.0" prefWidth="199.0" text="criaturas mágicas">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="213.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaHistoria11" fitHeight="67.0" fitWidth="96.0" layoutX="14.0" layoutY="25.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/libros.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionHistoria1" layoutX="112.0" layoutY="25.0" prefHeight="42.0" prefWidth="199.0" text="Historia de la">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelA_seleccionHistoria2" layoutX="112.0" layoutY="53.0" prefHeight="36.0" prefWidth="199.0" text="magia">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="415.0" layoutY="313.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaVuelo11" fitHeight="62.0" fitWidth="89.0" layoutX="14.0" layoutY="22.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/escoba.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionVuelo" layoutX="115.0" layoutY="35.0" prefHeight="42.0" prefWidth="199.0" text="Clases de vuelo">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="28.0" layoutY="547.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaRunas11" fitHeight="74.0" fitWidth="72.0" layoutX="26.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(6).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionRunas" layoutX="117.0" layoutY="36.0" prefHeight="42.0" prefWidth="207.0" text="Runas antiguas">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="405.0" layoutY="418.0" prefHeight="105.0" prefWidth="338.0">
+                     <children>
+                        <ImageView fx:id="_asignaturaAdivinacion11" fitHeight="62.0" fitWidth="89.0" layoutX="35.0" layoutY="21.0" onMouseClicked="#cambiarAsignaturaIndividual" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/pngegg%20(7).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="labelA_seleccionAdivinacion" layoutX="126.0" layoutY="31.0" prefHeight="42.0" prefWidth="134.0" text="Adivinación">
+                           <font>
+                              <Font name="Harrington" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <CheckBox fx:id="_checkDefensa" layoutX="14.0" layoutY="457.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkCriaturas" layoutX="383.0" layoutY="147.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkEncantamientos" layoutX="14.0" layoutY="345.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkRunas" layoutX="15.0" layoutY="587.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkAdivinacion" layoutX="391.0" layoutY="459.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkVuelo" layoutX="386.0" layoutY="351.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="_checkHistoria" layoutX="383.0" layoutY="256.0" mnemonicParsing="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <Button layoutX="411.0" layoutY="579.0" mnemonicParsing="false" onMouseClicked="#Asignaturas_elegidas" prefHeight="43.0" prefWidth="174.0" text="Guardar Cambios" textFill="#b38a39">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="panelLog" prefHeight="461.0" prefWidth="862.0" visible="false">
+         <children>
+            <ImageView fitHeight="473.0" fitWidth="1030.0" layoutX="-14.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/harry-potter-hogwarts-legacy.gif" />
+               </image>
+            </ImageView>
+            <TextField fx:id="labelUser" layoutX="345.0" layoutY="296.0" promptText="Usuario">
+               <font>
+                  <Font name="Roboto Slab Light" size="16.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="labelPass" layoutX="345.0" layoutY="350.0" promptText="Contraseña">
+               <font>
+                  <Font name="Roboto Slab Light" size="16.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="394.0" layoutY="230.0" prefHeight="44.0" prefWidth="101.0" text="Login" textFill="#ac972a">
+               <font>
+                  <Font name="Harrington" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="346.0" layoutY="347.0">
+               <tooltip>
+                  <Tooltip text="Pulsa para entrar" />
+               </tooltip>
+            </Label>
+            <ImageView fx:id="jlabelEntrarLogin" fitHeight="43.0" fitWidth="89.0" layoutX="406.0" layoutY="400.0" onMouseClicked="#abrirCasaLogin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/snitch.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="jlabelRegistro" layoutX="664.0" layoutY="7.0" onMouseClicked="#registro" prefHeight="21.0" prefWidth="101.0" text="Registro" textFill="#ac972a">
+               <font>
+                  <Font name="Harrington" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="botonRegistro" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/hat_98438%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="jlabelSalir" layoutX="774.0" layoutY="7.0" onMouseClicked="#salirProg" prefHeight="28.0" prefWidth="77.0" text="Salir" textFill="#ac972a">
+               <font>
+                  <Font name="Harrington" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/if-12-harry-potter-colour-harrys-lightning-scar-2730325_88172.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="panelRegistro" layoutX="10.0" layoutY="10.0" prefHeight="437.0" prefWidth="912.0" visible="false">
+         <children>
+            <ImageView fitHeight="524.0" fitWidth="927.0" layoutX="-10.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/Hogwarts%20Gawalpop.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="botonSombrero" fitHeight="118.0" fitWidth="112.0" layoutX="398.0" layoutY="367.0" onMouseClicked="#saberCasa" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/hat_98438%20(1).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imagenPulsaSombrero" fitHeight="127.0" fitWidth="183.0" layoutX="454.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/pngegg%20(10).png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelPulsaSombrero1" layoutX="472.0" layoutY="294.0" text="Pulsa sobre mí para saber" />
+            <Label fx:id="labelPulsaSombrero2" layoutX="472.0" layoutY="311.0" text="en que casa te pondré." />
+            <ImageView fx:id="imagenNombreCasa" fitHeight="184.0" fitWidth="216.0" layoutX="256.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@imagenes/pngegg%20(11).png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label_casa_seleccion" layoutX="299.0" layoutY="279.0" prefHeight="30.0" prefWidth="121.0" text="GRYFFINDOR">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="botonIrHogwarts" fitHeight="112.0" fitWidth="80.0" layoutX="813.0" layoutY="423.0" onMouseClicked="#anden934" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/pngegg%20(13).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panelProfesores" layoutY="-1.0" prefHeight="695.0" prefWidth="1052.0" visible="false">
+         <children>
+            <Pane fx:id="_panelMenuLateralProfe" prefHeight="693.0" prefWidth="228.0">
+               <children>
+                  <ImageView fx:id="_imagen_banderaProfes" fitHeight="338.0" fitWidth="238.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/casas/bandera.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="_imgEScudoProfes" fitHeight="184.0" fitWidth="173.0" layoutX="30.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../img/escudos/cole.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="-3.0" layoutY="381.0" prefHeight="312.0" prefWidth="232.0">
+                     <children>
+                        <Button fx:id="_boton_sala_comun_Profes" mnemonicParsing="false" onAction="#cambiarSalaProfes" prefHeight="74.0" prefWidth="229.0" styleClass="boton" text="Sala Común" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_Cursos_Profes" mnemonicParsing="false" onAction="#cambiarCursosProfes" prefHeight="74.0" prefWidth="229.0" text="Cursos" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_tareas_Profes" mnemonicParsing="false" onAction="#cambiarTareasProfes" prefHeight="74.0" prefWidth="229.0" text="Tareas" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_Alumnos_Profes" mnemonicParsing="false" onAction="#cambiarCorreccionesProfes" prefHeight="92.0" prefWidth="229.0" text="Correcciones" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="_botonSalirProfes" layoutX="79.0" layoutY="302.0" mnemonicParsing="false" onAction="#cerrarTodo" onMouseClicked="#salirProg" text="SALIR" textFill="#e2a825">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botonSalirAlumno11" layoutX="56.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#cerrarSesion" text="Cerrar Sesión" textFill="#e2a825">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="_panelSalaComunProfes" layoutX="223.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="822.0" fitWidth="837.0" layoutX="-7.0" layoutY="-139.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label_salaComun_profesores" layoutX="125.0" layoutY="34.0" text="Sala común Profesores">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <TableView fx:id="_tbprofesores_semanal" layoutX="105.0" layoutY="192.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="_columP_tarea_nombre" prefWidth="79.33331298828125" text="Nombre" />
+                        <TableColumn fx:id="_columP_tarea_apellidos" prefWidth="122.66665649414062" text="Apellidos" />
+                        <TableColumn fx:id="_columP_tarea_cursos" prefWidth="112.0" text="Curso" />
+                        <TableColumn fx:id="_columP_tarea_tareas" editable="false" minWidth="0.0" prefWidth="121.99993896484375" text="Tareas" />
+                        <TableColumn fx:id="_columP_tarea_tipo" prefWidth="82.66668701171875" text="Tipo" />
+                        <TableColumn fx:id="_columP_tarea_fecha" prefWidth="88.0" text="Fecha" />
+                     </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelP_planing" layoutX="102.0" layoutY="124.0" text="Planning Semanal" underline="true">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_asistencia" layoutX="124.0" layoutY="584.0" text="Asistencia">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_mensajeria" layoutX="272.0" layoutY="588.0" text="Mensajería">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_historial" layoutX="399.0" layoutY="592.0" text="Historial Asistencia">
+                     <font>
+                        <Font name="Harrington" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="_iconPergamino" fitHeight="73.0" fitWidth="118.0" layoutX="108.0" layoutY="498.0" onMouseClicked="#cambiar_asistencia" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/otros/pergamino.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="_iconTemario" fitHeight="92.0" fitWidth="128.0" layoutX="272.0" layoutY="493.0" onMouseClicked="#cambiarMensajeria" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/png6egg%20(11).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="_fenixProfesores" fitHeight="84.0" fitWidth="111.0" layoutX="438.0" layoutY="501.0" onMouseClicked="#cambiarPanel_historial_asistencia" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/otros/temario.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imagen_recordadora" fitHeight="35.0" fitWidth="33.0" layoutX="336.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/recordadora_roja.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="_panelCursosProfes" layoutX="223.0" prefHeight="695.0" prefWidth="831.0" visible="false">
+               <children>
+                  <ImageView fitHeight="822.0" fitWidth="837.0" layoutX="-3.0" layoutY="-125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="_tablaProfesor_cursos" layoutX="110.0" layoutY="161.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="_columAlumno" prefWidth="175.33331298828125" resizable="false" text="Alumno" />
+                        <TableColumn fx:id="_columApellidos" prefWidth="182.00003051757812" text="Apellidos" />
+                        <TableColumn fx:id="_columCursos" prefWidth="113.3333740234375" text="Cursos" />
+                        <TableColumn fx:id="_columCasa" prefWidth="124.6666259765625" text="Casa" />
+                     </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelP_cursosAsisgnados" layoutX="197.0" layoutY="42.0" text="Cursos Asignados">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+               </children></Pane>
+            <Pane fx:id="_panelAsignaerTareasProfes" layoutX="228.0" prefHeight="695.0" prefWidth="831.0" visible="false">
+               <children>
+                  <ImageView fitHeight="838.0" fitWidth="831.0" layoutX="-5.0" layoutY="-119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelP_tareas_nombre" layoutX="124.0" layoutY="124.0" text="Nombre Tarea">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="labelP_tareas_cursos" layoutX="126.0" layoutY="159.0" text="Cursos">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_tareas_alumnos" layoutX="123.0" layoutY="245.0" text="Alumnos">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_tareas_descripcion" layoutX="126.0" layoutY="402.0" text="Descripción">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_tareas_fecha" layoutX="123.0" layoutY="334.0" text="Fecha inicio">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="_cbTareas_cursos" layoutX="302.0" layoutY="160.0" prefHeight="25.0" prefWidth="248.0" />
+                  <ComboBox fx:id="_cbTareas_alumnos" layoutX="303.0" layoutY="245.0" prefHeight="25.0" prefWidth="248.0" />
+                  <TextArea fx:id="_taTareas_descripcion" layoutX="127.0" layoutY="438.0" prefHeight="73.0" prefWidth="431.0" />
+                  <DatePicker fx:id="_dpTareas_fechaIni" layoutX="303.0" layoutY="335.0" prefHeight="25.0" prefWidth="248.0" />
+                  <Label fx:id="labelP_asignarTareas" layoutX="135.0" layoutY="44.0" text="Asignar Tareas">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <TextField fx:id="_tfNombreTarea" layoutX="302.0" layoutY="125.0" prefHeight="25.0" prefWidth="248.0" />
+                  <Label fx:id="labelP_tareas_destinatarios" layoutX="132.0" layoutY="522.0" text="Destinatarios">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="_taTarea_destinatario" editable="false" layoutX="128.0" layoutY="557.0" prefHeight="58.0" prefWidth="431.0" />
+                  <Button fx:id="boton_enviar_tareas" layoutX="302.0" layoutY="637.0" mnemonicParsing="false" onMouseClicked="#alta_tareas" text="Enviar">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                  <Button fx:id="botonP_mas" layoutX="571.0" layoutY="245.0" mnemonicParsing="false" onMouseClicked="#insertar_destinatarios" text="+">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label fx:id="labelP_tareas_tipo" layoutX="122.0" layoutY="288.0" text="Tipo Tarea">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="_cbTareas_tipo" layoutX="302.0" layoutY="288.0" prefHeight="25.0" prefWidth="248.0" />
+                  <Label fx:id="labelP_tareas_casa" layoutX="123.0" layoutY="201.0" text="Casa">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="_cbTarea_casa" layoutX="303.0" layoutY="202.0" prefHeight="25.0" prefWidth="248.0" />
+                  <Label fx:id="labelP_tareas_fecha_entrega" layoutX="122.0" layoutY="375.0" text="Fecha Entrega">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="_dpTareas_fechaFin" layoutX="302.0" layoutY="376.0" prefHeight="25.0" prefWidth="248.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="_panelCorreccionesProfes" layoutX="219.0" prefHeight="695.0" prefWidth="837.0" visible="false">
+               <children>
+                  <ImageView fitHeight="820.0" fitWidth="837.0" layoutX="6.0" layoutY="-125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <TabPane layoutX="94.0" layoutY="126.0" prefHeight="325.0" prefWidth="670.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="tabProfesores_todas" onSelectionChanged="#ocultarCorrecionesProfesores" text="Todas">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="699.0">
+                                 <children>
+                                    <TableView fx:id="_tbTarea_correciones" layoutX="4.0" layoutY="10.0" prefHeight="276.0" prefWidth="670.0" tableMenuButtonVisible="true">
+                                       <columns>
+                                          <TableColumn fx:id="_columTareaId" prefWidth="40.0" text="Id" />
+                                          <TableColumn fx:id="_columTareaNombre" prefWidth="94.4000244140625" text="Nombre" />
+                                          <TableColumn fx:id="_columTareasApellidos" prefWidth="142.4000244140625" text="Apellidos" />
+                                          <TableColumn fx:id="_columTareasCursos" prefWidth="94.4000244140625" text="Cursos" />
+                                          <TableColumn fx:id="_columTareasTareas" prefWidth="100.79998779296875" text="Tareas" />
+                                          <TableColumn fx:id="_columTareaTipo" prefWidth="103.199951171875" text="Tipo" />
+                                          <TableColumn fx:id="_columTareasFechaFin" editable="false" minWidth="0.0" prefWidth="92.00006103515625" text="Fecha" />
+                                       </columns>
+                                       <effect>
+                                          <Blend>
+                                             <topInput>
+                                                <SepiaTone />
+                                             </topInput>
+                                          </Blend>
+                                       </effect>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="tabProfesores_pendientes" onSelectionChanged="#mostrarCorrecionesProfesores" text="Pendientes">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="_tbTarea_correciones_pendientes" layoutX="-2.0" layoutY="10.0" prefHeight="276.0" prefWidth="670.0" tableMenuButtonVisible="true">
+                                       <columns>
+                                          <TableColumn fx:id="_columTareaIdPendientes" prefWidth="45.5999755859375" text="Id" />
+                                          <TableColumn fx:id="_columTareaNombrePendientes" prefWidth="90.4000244140625" text="Nombre" />
+                                          <TableColumn fx:id="_columTareasApellidosPendientes" prefWidth="123.20001220703125" text="Apellidos" />
+                                          <TableColumn fx:id="_columTareasCursosPendientes" prefWidth="92.79998779296875" text="Cursos" />
+                                          <TableColumn fx:id="_columTareasTareasPendientes" prefWidth="124.79998779296875" text="Tareas" />
+                                          <TableColumn fx:id="_columTareaTipoPendientes" prefWidth="99.20001220703125" text="Tipo" />
+                                          <TableColumn fx:id="_columTareasFechaFinPendientes" editable="false" minWidth="0.0" prefWidth="92.0" text="Fecha" />
+                                       </columns>
+                                       <effect>
+                                          <Blend>
+                                             <topInput>
+                                                <SepiaTone />
+                                             </topInput>
+                                          </Blend>
+                                       </effect>
+                                    </TableView>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TabPane>
+                  <Label fx:id="labelP_correciones" layoutX="257.0" layoutY="47.0" text="Correcciones ">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <Label fx:id="labelP_correciones_alumno" layoutX="120.0" layoutY="478.0" text="Alumno">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTareas_alumno" layoutX="260.0" layoutY="479.0" prefHeight="25.0" prefWidth="274.0" />
+                  <Label fx:id="labelP_correciones_comentario" layoutX="120.0" layoutY="520.0" text="Comentario">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTareasComentario" layoutX="260.0" layoutY="521.0" prefHeight="25.0" prefWidth="274.0" />
+                  <Label fx:id="labelP_correciones_nota" layoutX="120.0" layoutY="564.0" text="Nota">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTareasNota" layoutX="260.0" layoutY="565.0" prefHeight="25.0" prefWidth="274.0" />
+                  <Button fx:id="botonP_correciones" layoutX="377.0" layoutY="615.0" mnemonicParsing="false" onMouseClicked="#guardarCorrecciones" text="Guardar">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="_panelAsistencia" layoutX="219.0" layoutY="-1.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="830.0" fitWidth="891.0" layoutX="-8.0" layoutY="-135.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelP_asistenciaAlumnos" layoutX="125.0" layoutY="34.0" text="Asistencia Alumnos">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <TableView fx:id="_tablaP_asistencia" editable="true" layoutX="105.0" layoutY="240.0" prefHeight="228.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="_columP_nombre" prefWidth="223.33334350585938" text="Nombre" />
+                        <TableColumn fx:id="_columP_apellidos" prefWidth="229.33331298828125" text="Apellidos" />
+                        <TableColumn fx:id="_columP_dni" prefWidth="154.66668701171875" text="Dni" />
+                     </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Label fx:id="labelP_asistencia_curso" layoutX="197.0" layoutY="147.0" text="Curso:">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelP_asistencia_casa" layoutX="200.0" layoutY="189.0" text="Casa:">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="_comboP_AsistenciaCursos" layoutX="300.0" layoutY="143.0" prefHeight="25.0" prefWidth="228.0" />
+                  <ComboBox fx:id="_comboP_AsistenciaCasa" layoutX="300.0" layoutY="187.0" prefHeight="25.0" prefWidth="228.0" />
+                  <Button fx:id="botonP_presente" layoutX="285.0" layoutY="489.0" mnemonicParsing="false" onMouseClicked="#guardar_Asistencias_Alumnos" prefHeight="33.0" prefWidth="96.0" text="Presente">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="botonP_ausente" layoutX="393.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#guardar_Asistencias_Alumnos" prefHeight="33.0" prefWidth="92.0" text="Ausente">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="botonP_restrasado" layoutX="499.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#guardar_Asistencias_Alumnos" prefHeight="33.0" prefWidth="96.0" text="Retraso">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label fx:id="label_asistencia_botones" layoutX="111.0" layoutY="483.0" prefHeight="33.0" prefWidth="174.0" text="Asignar Asistencia:">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="_paneMensajeria" layoutX="223.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="817.0" fitWidth="833.0" layoutX="1.0" layoutY="-118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelP_mensajeria_titulo" layoutX="262.0" layoutY="49.0" text="Mensajería">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                    
+                  </Label>
+                  <TabPane layoutX="78.0" layoutY="120.0" prefHeight="513.0" prefWidth="695.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab fx:id="tab_pane_novedades" text="Enviar mensajes">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="103.0" layoutY="65.0" text="Alumno:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="105.0" layoutY="125.0" text="Mensaje:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="combo_mensajeria_alumnos" layoutX="231.0" layoutY="61.0" prefHeight="25.0" prefWidth="215.0" />
+                                    <TextArea fx:id="textArea_menaje_editar" layoutX="93.0" layoutY="162.0" prefHeight="149.0" prefWidth="480.0" />
+                                    <Button fx:id="boton_guardarMensajeriaP" layoutX="288.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#botonGuardarMensajeria_profesores" text="Enviar">
+                                       <font>
+                                          <Font name="Harrington" size="24.0" />
+                                       </font>
+                                    </Button>
+                                 </children></AnchorPane>
+                           </content></Tab>
+                      <Tab fx:id="tab_pane_historico" text="Mensajes">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaP_listar_mensajes" layoutX="19.0" layoutY="17.0" prefHeight="200.0" prefWidth="617.0">
+                                      <columns>
+                                          <TableColumn fx:id="columP_id_mensajeria" prefWidth="86.88888549804688" text="Id" />
+                                        <TableColumn fx:id="columP_nombre_mensajeria" prefWidth="90.44442749023438" text="Nombre" />
+                                        <TableColumn fx:id="columP_apellidos_mensajeria" prefWidth="113.33331298828125" text="Apellidos" />
+                                          <TableColumn fx:id="columP_curso_mensajeria" prefWidth="115.33331298828125" text="Curso" />
+                                          <TableColumn fx:id="columP_fecha_mensajeria" prefWidth="111.33331298828125" text="Fecha" />
+                                          <TableColumn fx:id="columP_leidos_mensajeria" prefWidth="100.88885498046875" text="Leído" />
+                                      </columns>
+                                    </TableView>
+                                    <TextArea fx:id="textarea_mensajeria" layoutX="21.0" layoutY="269.0" prefHeight="190.0" prefWidth="503.0" />
+                                    <Label fx:id="label_mensajeP" layoutX="26.0" layoutY="234.0" text="Mensaje:">
+                                       <font>
+                                          <Font name="Harrington" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="botonP_mostar_mensaje" layoutX="302.0" layoutY="230.0" mnemonicParsing="false" onMouseClicked="#mostrar_mensajesProfesor" text="Mostrar Mensaje" />
+                                    <Button fx:id="botonP_cerrar_mensaje" layoutX="563.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#boton_cerrar_mensajeP" text="Cerrar" />
+                                 </children>
+                              </AnchorPane>
+                           </content></Tab>
+                    </tabs>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TabPane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="panelAdministrador" layoutX="-2.0" layoutY="-1.0" prefHeight="695.0" prefWidth="1068.0" visible="false">
+         <children>
+            <Pane fx:id="panelTareas11" layoutX="222.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0">
+               <children>
+                  <ImageView fitHeight="820.0" fitWidth="837.0" layoutY="-124.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label_titulo11" layoutX="347.0" layoutY="46.0" prefHeight="62.0" prefWidth="174.0" text="Tareas">
+                     <font>
+                        <Font name="Harrington" size="50.0" />
+                     </font>
+                     
+                  </Label>
+                  <TableView layoutX="99.0" layoutY="138.0" prefHeight="199.0" prefWidth="625.0">
+                     <columns>
+                        <TableColumn prefWidth="157.99996948242188" text="Asignatura" />
+                        <TableColumn prefWidth="143.3333740234375" text="Tipo" />
+                        <TableColumn prefWidth="158.44442749023438" text="Nombre" />
+                        <TableColumn prefWidth="165.11114501953125" text="Fecha Entrega" />
+                     </columns>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </TableView>
+                  <ImageView fitHeight="79.0" fitWidth="96.0" layoutX="157.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/reliquias.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="79.0" fitWidth="96.0" layoutX="157.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pn5gegg%20(10).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="296.0" layoutY="592.0" text="Guardar Cambios">
+                     <font>
+                        <Font name="Harrington" size="28.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="78.0" layoutX="161.0" layoutY="585.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/llaveAlada.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea layoutX="294.0" layoutY="457.0" prefHeight="92.0" prefWidth="214.0" />
+                  <TextField layoutX="294.0" layoutY="388.0" prefHeight="25.0" prefWidth="214.0" />
+                  <Button layoutX="521.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#fileChooser" text="+" />
+               </children>
+            </Pane>
+            <ImageView fx:id="_imagenFondoAdmin" fitHeight="719.0" fitWidth="1066.0" layoutX="43.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../img/otros/despacho.jpg" />
+               </image>
+            </ImageView>
+            <Pane fx:id="panelMenuLateral1" layoutX="-4.0" layoutY="-9.0" prefHeight="693.0" prefWidth="221.0" style="-fx-background-color: white;">
+               <children>
+                  <ImageView fx:id="_imagen_bandera1" fitHeight="334.0" fitWidth="241.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/casas/bandera.png" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="-3.0" layoutY="332.0" prefHeight="370.0" prefWidth="227.0">
+                     <children>
+                        <Button fx:id="_boton_alumnos_administrador" mnemonicParsing="false" onAction="#abrir_administrador_alumnos" prefHeight="143.0" prefWidth="227.0" styleClass="boton" text="Alumnos" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_profesores_administrador" mnemonicParsing="false" onMouseClicked="#abrir_administrador_profesorTabla" prefHeight="144.0" prefWidth="227.0" text="Profesores" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_cerrar_sesion" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="147.0" prefWidth="227.0" text="Cerrar Sesión" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_salir" mnemonicParsing="false" onAction="#salirProg" prefHeight="141.0" prefWidth="227.0" text="Salir" textFill="#e2a825">
+                           <font>
+                              <Font name="Harrington" size="30.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label fx:id="_labelSesionEstudiante1" layoutX="22.0" layoutY="6.0" prefHeight="17.0" prefWidth="72.0" text="LabelSesion1" />
+               </children>
+            </Pane>
+            <Pane fx:id="_panelAdministadorAlumnos" layoutX="225.0" layoutY="-7.0" prefHeight="699.0" prefWidth="835.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <ImageView fitHeight="821.0" fitWidth="845.0" layoutX="-4.0" layoutY="-121.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelAdministadorTabla" layoutX="125.0" layoutY="34.0" text="Administrar Alumnos">
+                     <font>
+                        <Font name="Harrington" size="55.0" />
+                     </font>
+                     
+                  </Label>
+                  <TableView fx:id="tablaAd_alumnos" layoutX="105.0" layoutY="192.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true" visible="false">
+                     <columns>
+                        <TableColumn fx:id="columAD_dni" prefWidth="75.0" text="Dni" />
+                        <TableColumn fx:id="columAD_nombre" prefWidth="145.5555419921875" text="Nombre" />
+                        <TableColumn fx:id="columAD_apellidos" prefWidth="132.66668701171875" text="Apellidos" />
+                        <TableColumn fx:id="columAD_casa" prefWidth="126.6666259765625" text="Casa" />
+                        <TableColumn fx:id="columAD_curso" editable="false" minWidth="0.0" prefWidth="115.3333740234375" text="Curso" />
+                     </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Button fx:id="botonAD_modificar" layoutX="180.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#abrir_modificar_estudiante" prefHeight="37.0" prefWidth="112.0" text="Modificar" visible="false">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botonAD_eliminar" layoutX="411.0" layoutY="532.0" mnemonicParsing="false" onAction="#eliminarEstudiante" prefHeight="37.0" prefWidth="107.0" text="Eliminar" visible="false">
+                     <font>
+                        <Font name="Harrington" size="18.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tablaAd_alumnos1" layoutX="79.0" layoutY="151.0" prefHeight="276.0" prefWidth="612.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="columAD_dni1" prefWidth="75.0" text="Dni" />
+                        <TableColumn fx:id="columAD_nombre1" prefWidth="109.33331298828125" text="Nombre" />
+                        <TableColumn fx:id="columAD_apellidos1" prefWidth="154.66659545898438" text="Apellidos" />
+                        <TableColumn fx:id="columAD_casa1" prefWidth="115.33331298828125" text="Telefono" />
+                        <TableColumn fx:id="columAD_curso1" editable="false" minWidth="0.0" prefWidth="144.0" text="Correo" />
+                     </columns>
+                     <effect>
+                        <Blend>
+                           <topInput>
+                              <SepiaTone />
+                           </topInput>
+                        </Blend>
+                     </effect>
+                  </TableView>
+                  <Button fx:id="botonAD_eliminarP" layoutX="408.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#eliminarProfesor" prefHeight="37.0" prefWidth="114.0" text="Eliminar" />
+                  <Button fx:id="botonAD_ModificarP" layoutX="165.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#modificarProfesores_administrador" prefHeight="37.0" prefWidth="119.0" text="Modificar" />
+               </children>
+            </Pane>
+            <Pane fx:id="_panelAdministrador_profesor" layoutX="223.0" layoutY="1.0" prefHeight="705.0" prefWidth="850.0" visible="false">
+               <children>
+                  <ImageView fitHeight="814.0" fitWidth="838.0" layoutY="-119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelAD_configuracionTitulo" layoutX="122.0" layoutY="56.0" prefHeight="62.0" prefWidth="601.0" text="Configuración Profesor">
+                     <font>
+                        <Font name="Harrington" size="36.0" />
+                     </font>
+                     
+                  </Label>
+                  <Label layoutX="109.0" layoutY="160.0" text="Nombre:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfNombreEstudiante11" layoutX="309.0" layoutY="165.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label layoutX="107.0" layoutY="253.0" text="DNI:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfApellidosEstudiante11" layoutX="309.0" layoutY="213.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label layoutX="107.0" layoutY="208.0" text="Apellidos">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfDniEstudiante11" layoutX="309.0" layoutY="258.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label layoutX="111.0" layoutY="347.0" text="Email:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTelefonoEstudiante11" layoutX="309.0" layoutY="305.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label layoutX="107.0" layoutY="300.0" text="Teléfono:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="107.0" layoutY="397.0" text="F. Nacimiento:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfFechaNacEstudiante11" layoutX="309.0" layoutY="402.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Button fx:id="_boton_sala_comun111" layoutX="253.0" layoutY="527.0" mnemonicParsing="false" onMouseClicked="#guardarModificacion_ProfesorAD" prefHeight="57.0" prefWidth="274.0" styleClass="boton" text="Actualizar Datos" textFill="#e2a825">
+                     <font>
+                        <Font name="Harrington" size="30.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="107.0" layoutY="450.0" text="Contraseña:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfPassEstudiante11" layoutX="309.0" layoutY="455.0" prefHeight="25.0" prefWidth="254.0" />
+                  <TextField fx:id="_tfEmailEstudiante11" layoutX="309.0" layoutY="349.0" prefHeight="25.0" prefWidth="254.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="_panelAdministradorConfiguracion" layoutX="220.0" layoutY="-1.0" prefHeight="705.0" prefWidth="850.0" visible="false">
+               <children>
+                  <ImageView fitHeight="841.0" fitWidth="862.0" layoutY="-119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelAD_configuracionTitulo2" layoutX="122.0" layoutY="56.0" prefHeight="62.0" prefWidth="478.0" text="Administrar Configuración">
+                     <font>
+                        <Font name="Harrington" size="36.0" />
+                     </font>
+                    
+                  </Label>
+                  <Label fx:id="labelAd_nombre" layoutX="109.0" layoutY="160.0" text="Nombre:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfNombreEstudiante1" layoutX="309.0" layoutY="165.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelAd_dni" layoutX="107.0" layoutY="253.0" text="DNI:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfApellidosEstudiante1" layoutX="309.0" layoutY="213.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelAd_curso" layoutX="109.0" layoutY="445.0" text="Curso:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfEmailEstudiante1" layoutX="309.0" layoutY="352.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelAd_apellidos" layoutX="107.0" layoutY="208.0" text="Apellidos">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfDniEstudiante1" layoutX="309.0" layoutY="258.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelAd_email" layoutX="111.0" layoutY="347.0" text="Email:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfTelefonoEstudiante1" layoutX="309.0" layoutY="305.0" prefHeight="25.0" prefWidth="254.0" />
+                  <Label fx:id="labelAd_telefono" layoutX="107.0" layoutY="300.0" text="Teléfono:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAd_fechNac" layoutX="107.0" layoutY="397.0" text="F. Nacimiento:">
+                     <font>
+                        <Font name="Harrington" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="_tfFechaNacEstudiante1" layoutX="309.0" layoutY="402.0" prefHeight="25.0" prefWidth="254.0" />
+                  <ImageView fitHeight="92.0" fitWidth="102.0" layoutX="674.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/WhatsApp%20Image%202022-12-08%20at%2017.45.47.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="216.0" fitWidth="222.0" layoutX="620.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/Untitl3ed.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="_boton_sala_comun11" layoutX="289.0" layoutY="567.0" mnemonicParsing="false" onMouseClicked="#guardarModificacion_alumAD" prefHeight="57.0" prefWidth="274.0" styleClass="boton" text="Actualizar Datos" textFill="#e2a825">
+                     <font>
+                        <Font name="Harrington" size="30.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="_cbCursos1" layoutX="308.0" layoutY="449.0" prefHeight="25.0" prefWidth="254.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="_panelHistorialAsistencia" layoutX="229.0" layoutY="9.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <ImageView fitHeight="830.0" fitWidth="891.0" layoutX="-8.0" layoutY="-135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/pngegg%20(51).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="125.0" layoutY="34.0" text="Historial Asistencia">
+               <font>
+                  <Font name="Harrington" size="55.0" />
+               </font>
+               
+            </Label>
+            <TableView fx:id="_tablaP_asistencia1" editable="true" layoutX="105.0" layoutY="240.0" prefHeight="228.0" prefWidth="612.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn fx:id="_columP_nombre1" prefWidth="122.66668701171875" text="Nombre" />
+                  <TableColumn fx:id="_columP_apellidos1" prefWidth="132.6666259765625" text="Apellidos" />
+                  <TableColumn fx:id="_columP_dni1" prefWidth="126.6666259765625" text="Dni" />
+                  <TableColumn fx:id="columP_asistencia21" prefWidth="100.66668701171875" text="Asistencia" />
+                  <TableColumn fx:id="columP_asistencia_fecha" prefWidth="113.333251953125" text="Fecha" />
+               </columns>
+               <effect>
+                  <Blend>
+                     <topInput>
+                        <SepiaTone />
+                     </topInput>
+                  </Blend>
+               </effect>
+            </TableView>
+            <Label layoutX="102.0" layoutY="124.0" underline="true">
+               <font>
+                  <Font name="Harrington" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="197.0" layoutY="147.0" text="Curso:">
+               <font>
+                  <Font name="Harrington" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="200.0" layoutY="189.0" text="Casa:">
+               <font>
+                  <Font name="Harrington" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="_comboP_AsistenciaCursos1" layoutX="300.0" layoutY="143.0" prefHeight="25.0" prefWidth="228.0" />
+            <ComboBox fx:id="_comboP_AsistenciaCasa1" layoutX="300.0" layoutY="187.0" prefHeight="25.0" prefWidth="228.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

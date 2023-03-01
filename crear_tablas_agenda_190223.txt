@@ -1,0 +1,172 @@
+CREATE TABLE `estudiantes` (
+  `id_estudiante` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) NOT NULL,
+  `apellidos` varchar(75) NOT NULL,
+  `telefono` int(9) DEFAULT NULL,
+  `dni` varchar(9) DEFAULT NULL,
+  `fecha_nac` varchar(10) NOT NULL,
+  `correo` varchar(100) DEFAULT NULL,
+  `pass` varchar(50) DEFAULT NULL,
+  `casa` varchar(20) DEFAULT NULL,
+  `promociona` tinyint(1) DEFAULT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  `curso` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_estudiante`),
+  UNIQUE KEY `dni` (`dni`),
+  UNIQUE KEY `correo` (`correo`)
+)
+
+CREATE TABLE `profesores` (
+  `id_profesor` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) NOT NULL,
+  `apellidos` varchar(75) NOT NULL,
+  `telefono` int(9) DEFAULT NULL,
+  `dni` varchar(9) DEFAULT NULL,
+  `fecha_nac` date NOT NULL,
+  `correo` varchar(100) DEFAULT NULL,
+  `pass` varchar(50) DEFAULT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id_profesor`),
+  UNIQUE KEY `dni` (`dni`),
+  UNIQUE KEY `correo` (`correo`)
+)
+
+CREATE TABLE `asignaturas` (
+  `id_asignatura` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_asignatura`)
+)
+
+CREATE TABLE `grupos` (
+  `id_grupo` int NOT NULL AUTO_INCREMENT,
+  `nombre_grupo` varchar(30) NOT NULL,
+  `casa_grupo` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_grupo`)
+)
+
+CREATE TABLE `asigProf` (
+  `id_asigProf` int NOT NULL AUTO_INCREMENT,
+  `id_profesor` int NOT NULL,
+  `id_asignatura` int NOT NULL,
+  PRIMARY KEY (`id_asigProf`,`id_profesor`,`id_asignatura`),
+  KEY `id_profesor` (`id_profesor`),
+  KEY `id_asignatura` (`id_asignatura`),
+  CONSTRAINT `asigProf_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  CONSTRAINT `asigProf_ibfk_2` FOREIGN KEY (`id_asignatura`) REFERENCES `asignaturas` (`id_asignatura`)
+)
+
+CREATE TABLE `asigEstu` (
+  `id_asigEstu` int(11) NOT NULL AUTO_INCREMENT,
+  `id_estudiante` int NOT NULL,
+  `id_asigProf` int NOT NULL,
+  PRIMARY KEY (`id_asigEstu`,`id_estudiante`,`id_asigProf`),
+  KEY `id_asigProf` (`id_asigProf`),
+  KEY `id_estudiante` (`id_estudiante`),
+  CONSTRAINT `asigEstu_ibfk_2` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`)
+)
+
+CREATE TABLE `cursos` (
+  `id_curso` int NOT NULL AUTO_INCREMENT,
+  `promocion` date DEFAULT NULL,
+  `id_grupo` int NOT NULL,
+  `id_profesor` int NOT NULL,
+  `id_estudiante` int DEFAULT NULL,
+  PRIMARY KEY (`id_curso`,`id_grupo`,`id_profesor`),
+  KEY `id_grupo` (`id_grupo`),
+  KEY `id_profesor` (`id_profesor`),
+  KEY `id_estudiante` (`id_estudiante`),
+  CONSTRAINT `cursos_ibfk_1` FOREIGN KEY (`id_grupo`) REFERENCES `grupos` (`id_grupo`),
+  CONSTRAINT `cursos_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  CONSTRAINT `cursos_ibfk_3` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`)
+)
+
+CREATE TABLE `tareas` (
+  `id_tarea` int NOT NULL AUTO_INCREMENT,
+  `id_profesor` int DEFAULT NULL,
+  `id_asignatura` int DEFAULT NULL,
+  `id_estudiante` int DEFAULT NULL,
+  `nombre_tarea` varchar(30) DEFAULT NULL,
+  `descripcion_tarea` varchar(500) DEFAULT NULL,
+  `tipo_tarea` varchar(30) DEFAULT NULL,
+  `rubrica` varchar(500) DEFAULT NULL,
+  `fecha_inicio` date DEFAULT NULL,
+  `fecha_fin` date DEFAULT NULL,
+  `entregado` tinyint(1) DEFAULT NULL,
+  `archivo` varchar(250) DEFAULT NULL,
+  `corregido` tinyint(1) DEFAULT 0,
+  `comentario_alumno` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id_tarea`),
+  KEY `id_profesor` (`id_profesor`),
+  KEY `id_asignatura` (`id_asignatura`),
+  KEY `tareas_FK` (`id_estudiante`),
+  CONSTRAINT `tareas_FK` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`),
+  CONSTRAINT `tareas_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  CONSTRAINT `tareas_ibfk_3` FOREIGN KEY (`id_asignatura`) REFERENCES `asignaturas` (`id_asignatura`)
+)
+
+CREATE TABLE `notas` (
+  `id_nota` int NOT NULL AUTO_INCREMENT,
+  `id_tarea` int DEFAULT NULL,
+  `id_estudiante` int DEFAULT NULL,
+  `nota` float DEFAULT NULL,
+  `comentario_profesor` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id_nota`),
+  KEY `id_tarea` (`id_tarea`),
+  KEY `id_estudiante` (`id_estudiante`),
+  CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`id_tarea`) REFERENCES `tareas` (`id_tarea`),
+  CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`)
+)
+
+CREATE TABLE `asistencia` (
+  `id_asistencia` int NOT NULL AUTO_INCREMENT,
+  `id_estudiante` int NOT NULL,
+  `id_asigProf` int NOT NULL,
+  `estado` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_asistencia`,`id_estudiante`,`id_asigProf`),
+  KEY `id_estudiante` (`id_estudiante`),
+  KEY `id_asigProf` (`id_asigProf`),
+  CONSTRAINT `asistencia_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`),
+  CONSTRAINT `asistencia_ibfk_2` FOREIGN KEY (`id_asigProf`) REFERENCES `asigProf` (`id_asigProf`)
+)
+
+CREATE TABLE `mensajes` (
+  `id_mensaje` int NOT NULL AUTO_INCREMENT,
+  `id_estudiante` int NOT NULL,
+  `id_profesor` int NOT NULL,
+  `mensaje` varchar(500) NOT NULL,
+  `fecha` varchar(50) NOT NULL,
+  `leido` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id_mensaje`,`id_profesor`,`id_estudiante`),
+  KEY `id_profesor` (`id_profesor`),
+  KEY `id_estudiante` (`id_estudiante`),
+  CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`),
+  CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`)
+)
+
+CREATE TABLE `mensajes_profesor` (
+  `id_mensaje_profesor` int NOT NULL AUTO_INCREMENT,
+  `id_estudiante` int NOT NULL,
+  `id_profesor` int NOT NULL,
+  `mensaje` varchar(1000) NOT NULL,
+  `fecha` varchar(15) NOT NULL,
+  `leido` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id_mensaje_profesor`,`id_estudiante`,`id_profesor`),
+  KEY `id_estudiante` (`id_estudiante`),
+  KEY `id_profesor` (`id_profesor`),
+  CONSTRAINT `mensajes_profesor_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`),
+  CONSTRAINT `mensajes_profesor_ibfk_2` FOREIGN KEY (`id_profesor`) REFERENCES `profesores` (`id_profesor`)
+)
+
+CREATE TABLE `temario` (
+  `id_temario` int NOT NULL AUTO_INCREMENT,
+  `tema` varchar(50) DEFAULT NULL,
+  `unidad` varchar(50) DEFAULT NULL,
+  `subunidad` varchar(50) DEFAULT NULL,
+  `descripcion` varchar(150) DEFAULT NULL,
+  `rescursos` varchar(50) DEFAULT NULL,
+  `id_asigProf` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id_temario`,`id_asigProf`),
+  KEY `id_asigProf` (`id_asigProf`),
+  CONSTRAINT `temario_ibfk_1` FOREIGN KEY (`id_asigProf`) REFERENCES `asigProf` (`id_asigProf`)
+)
+

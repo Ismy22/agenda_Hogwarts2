@@ -1,0 +1,63 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 mar 2023, 13:31:15
+    Author     : nuria
+*/
+
+.CsslabelconfiguracionAD{
+    -fx-text-fill:#2c333d;/*profesor*/
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+}
+.Csslabeltitulo{
+    -fx-text-fill: linear-gradient(from 60.5678% 38.8013% to 60.5678% 55.836%,#feca04, #2c333d);
+    -fx-font-family:"Harrington";
+    -fx-font-Size:55;
+}
+.Cssboton{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:15;
+    -fx-text-fill: #feca04;/*amarilloP*/
+    -fx-background-color: #2c333d;/*profesor*/
+}
+.table-view .column-header .label{
+    -fx-text-fill:#2c333d;/*profesor*/
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+}
+.table-cell{
+    -fx-font-Size:17;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+}
+.tab {
+    -fx-font-size: 20;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+}
+.combo-box{
+    -fx-font-Size:15;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+
+}
+.CssbotonGrande{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:25;
+    -fx-text-fill: #feca04;/*amarilloP*/
+    -fx-background-color: #2c333d;/*profesor*/
+}
+.CsslabeltituloMediano{
+    -fx-text-fill: linear-gradient(from 60.5678% 38.8013% to 60.5678% 55.836%,#feca04, #2c333d);
+    -fx-font-family:"Harrington";
+    -fx-font-Size:40;
+}
+.CssMenuLateral{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:30;
+    -fx-text-fill: #feca04;/*amarilloP*/
+    -fx-background-color: #2c333d;/*profesor*/
+}

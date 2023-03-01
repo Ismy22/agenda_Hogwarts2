@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20 feb 2023, 17:44:39
+    Author     : nuria
+*/
+/*menu lateral amarillo*/
+.CssLateral{
+
+    -fx-font-family:"Harrington";
+    -fx-font-Size:30;
+    -fx-background-color: #fbd702;/*amarillo*/
+    -fx-text-fill: #131313;
+/*    -fx-text-fill: linear-gradient(from 60.5678% 38.8013% to 60.5678% 55.836%,#131313, #fbd702);*/
+}
+.CssSalir{
+    -fx-background-color: #fbd702;
+    -fx-text-fill: #131313;
+    -fx-font-family:"Harrington";
+    -fx-font-Size:14;
+    
+}

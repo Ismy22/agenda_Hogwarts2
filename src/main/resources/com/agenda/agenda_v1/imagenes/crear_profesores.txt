@@ -1,0 +1,32 @@
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Albus', 'Dumbledore ', '666111222', '75149137h', '1981-07-04', 'profesores_nurismy@gmail.com', NULL);
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Minerva', 'McGonagall ', '666111333', '80071917q', '1981-07-04', 'profesores1_nurismy@gmail.com', NULL);
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Remus', 'Lupin', '666111444', '68732165t', '1981-07-04', 'profesores2_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Severus', 'Snape', '666111555', '89643229q', '1981-07-04', 'profesores3_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Rubeus', 'Hagrid', '666111666', '54684151h', '1981-07-04', 'profesores4_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Filius', 'Flitwick', '666111777', '45735171q', '1981-07-04', 'profesores5_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Sybill', 'Trelawney', '666111888', '38491551q', '1981-07-04', 'profesores6_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Rolanda', 'Hooch', '666111999', '83629991j', '1981-07-04', 'profesores7_nurismy@gmail.com', NULL);
+
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Cuthbert', 'Binns', '666222111', '94619337m', '1981-07-04', 'profesores8_nurismy@gmail.com', NULL);
+
+
+INSERT INTO 'profesores' ('id_profesor', 'nombre', 'apellidos', 'telefono', 'dni', 'fecha_nac', 'correo', 'imagen') VALUES (NULL, 'Bathsheda', 'Babbling', '666222333', '94619337m', '1981-07-04', 'profesores9_nurismy@gmail.com', NULL);
+
+
+//=======================================================================================
+
+INSERT INTO `profesores` (`id_profesor`, `nombre`, `apellidos`, `telefono`, `dni`, `fecha_nac`, `correo`, `imagen`) VALUES (NULL, 'Minerva', 'McGonagall ', '666111333', '80071917q', '1981-07-04', 'profesores1_nurismy@gmail.com', NULL);

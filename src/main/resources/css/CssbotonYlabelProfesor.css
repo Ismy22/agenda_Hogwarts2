@@ -1,0 +1,91 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 17 feb 2023, 20:21:24
+    Author     : nuria
+*/
+
+
+
+/*TITULOS PRINCIPALES GRADIAN*/
+.CssLabelPrincipalProfesores{
+    -fx-text-fill: linear-gradient(from 60.5678% 38.8013% to 60.5678% 55.836%,#feca04, #2c333d);
+    -fx-font-family:"Harrington";
+    -fx-font-Size:55;
+}
+.CssLabelPlaningProfesores{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:30;
+    -fx-text-fill: #2c333d;/*profesor*/
+}
+.CssSalacomunProfesores{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:18;
+    -fx-text-fill: #2c333d;/*profesor*/
+}
+.CssPanelTareasProfesores{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+    -fx-text-fill: #2c333d;/*profesor*/
+}
+.CsspanelCorrecionesProfesores{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+    -fx-text-fill: #2c333d;/*profesor*/
+}
+.CsspanelAsistenciaProfesores{
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+    -fx-text-fill: #2c333d;/*profesor*/
+}
+.tab {
+    -fx-font-size: 20;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+}
+.combo-box{
+    -fx-font-Size:15;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+
+}
+.table-view .column-header .label{
+   -fx-text-fill:#2c333d;/*profesor*/
+    -fx-font-family:"Harrington";
+    -fx-font-Size:21;
+}
+.table-cell{
+    -fx-font-Size:17;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+}
+.CssBotonAsistencia{
+    -fx-font-Size:15;
+    -fx-font-family:"Harrington";
+    -fx-background-color: #2c333d;/*profesor*/
+    -fx-text-fill:  #feca04;/*amarilloP*/
+}
+.cssmas{
+    -fx-font-size: 12;
+    -fx-background-color: #2c333d;/*profesor*/
+    -fx-text-fill: #feca04;/*amarilloP*/
+}
+.CssBotonGuardar{
+    -fx-font-size: 24;
+    -fx-background-color: #2c333d;/*profesor*/
+    -fx-text-fill: #feca04;/*amarilloP*/
+    -fx-font-family:"Harrington";
+}
+.CssBotonesMensaje{
+    -fx-font-size: 12;
+    -fx-background-color: #2c333d;/*profesor*/
+    -fx-text-fill: #feca04;/*amarilloP*/
+    -fx-font-family:"Harrington";
+}
+.csscombo{
+    -fx-font-Size:15;
+    -fx-text-fill:black;
+    -fx-font-family:"Harrington";
+}
