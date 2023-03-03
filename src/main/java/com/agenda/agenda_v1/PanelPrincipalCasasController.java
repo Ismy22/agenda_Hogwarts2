@@ -4,8 +4,10 @@
  */
 package com.agenda.agenda_v1;
 
+import static com.lowagie.text.xml.simpleparser.EntitiesToSymbol.map;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -796,6 +798,12 @@ public class PanelPrincipalCasasController implements Initializable {
     private Label labelAD_configuracionTitulo;
     @FXML
     private Label labelAD_configuracionTitulo2;
+    @FXML
+    private Button _boton_informe_asignatura;
+    @FXML
+    private Button _boton_menu_informes;
+    @FXML
+    private Pane _panelInformes;
 
     /**
      * Initializes the controller class.
@@ -1967,7 +1975,7 @@ public class PanelPrincipalCasasController implements Initializable {
 
                 break;
             case "transformaciones":
-                
+
                 cambiarPanelAsignaturasIndividual(asignatura, "Mcgonagall", 9.3f, "OBLIGATORIA");
 
                 break;
@@ -2080,26 +2088,34 @@ public class PanelPrincipalCasasController implements Initializable {
     @FXML
     public void ocultarCorrecionesProfesores() {
 
-        labelP_correciones_alumno.setVisible(false);
-        labelP_correciones_comentario.setVisible(false);
-        labelP_correciones_nota.setVisible(false);
-        _tfTareas_alumno.setVisible(false);
-        _tfTareasComentario.setVisible(false);
-        _tfTareasNota.setVisible(false);
-        botonP_correciones.setVisible(false);
+        try {
+            labelP_correciones_alumno.setVisible(false);
+            labelP_correciones_comentario.setVisible(false);
+            labelP_correciones_nota.setVisible(false);
+            _tfTareas_alumno.setVisible(false);
+            _tfTareasComentario.setVisible(false);
+            _tfTareasNota.setVisible(false);
+            botonP_correciones.setVisible(false);
+        } catch (Exception e) {
+            System.out.println("");
+        }
 
     }
 
     @FXML
     public void mostrarCorrecionesProfesores() {
 
-        labelP_correciones_alumno.setVisible(true);
-        labelP_correciones_comentario.setVisible(true);
-        labelP_correciones_nota.setVisible(true);
-        _tfTareas_alumno.setVisible(true);
-        _tfTareasComentario.setVisible(true);
-        _tfTareasNota.setVisible(true);
-        botonP_correciones.setVisible(true);
+        try {
+            labelP_correciones_alumno.setVisible(true);
+            labelP_correciones_comentario.setVisible(true);
+            labelP_correciones_nota.setVisible(true);
+            _tfTareas_alumno.setVisible(true);
+            _tfTareasComentario.setVisible(true);
+            _tfTareasNota.setVisible(true);
+            botonP_correciones.setVisible(true);
+        } catch (Exception e) {
+            System.out.println("");
+        }
 
     }
 
@@ -4437,10 +4453,9 @@ public class PanelPrincipalCasasController implements Initializable {
                 ps.setString(3, estado);
                 ps.setString(4, fecha);
                 int s = ps.executeUpdate();
-                if (s<1) {
+                if (s < 1) {
                     Jopane("No se ha podido actualizar la asistencia", "Error Guardar Asistencia");
-                }
-                else{
+                } else {
                     Jopane("Asistencia actualizada correctamente", "Guardar Asistencia");
                 }
 
@@ -4465,7 +4480,7 @@ public class PanelPrincipalCasasController implements Initializable {
         switch (botonElegido) {
             case "Presente":
                 guardar_botones_asistencia("Presente");
-                
+
                 break;
 
             case "Ausente":
@@ -5321,6 +5336,19 @@ public class PanelPrincipalCasasController implements Initializable {
 
         }
 
+    }
+
+    public void cambiarInformes() {
+        vaciarPanelTodo();
+        panelMenuLateral1.setVisible(true);
+        panelAdministrador.setVisible(true);
+        _panelInformes.setVisible(true);
+    }
+
+    @FXML
+    public void generar_informe_asignatura() {
+        GenerarInforme c = new GenerarInforme("asignaturas.pdf", "asignaturas.jasper");
+        c.generar(conn);
     }
 
 }

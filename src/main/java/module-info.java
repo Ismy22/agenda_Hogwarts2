@@ -3,6 +3,7 @@ module com.agenda.agenda_v1 {
     requires javafx.fxml;
     requires java.base;
     requires java.sql;
+    requires jasperreports;
 
     opens com.agenda.agenda_v1 to javafx.fxml;
     exports com.agenda.agenda_v1;

@@ -29,7 +29,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agenda.agenda_v1.PanelPrincipalCasasController">
    <children>
-      <Pane fx:id="panelAlumnos" layoutX="-2.0" layoutY="-1.0" prefHeight="691.0" prefWidth="1044.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0">
+      <Pane fx:id="panelAlumnos" layoutX="-2.0" layoutY="-1.0" prefHeight="691.0" prefWidth="1044.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0">
          <children>
             <Pane fx:id="_panelMensajeria_alumnos" layoutX="234.0" layoutY="5.0" prefHeight="695.0" prefWidth="831.0" style="-fx-background-color: white;" visible="false">
                <children>
@@ -224,7 +224,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane fx:id="panelAsignaturas" layoutX="221.0" layoutY="-2.0" prefHeight="695.0" prefWidth="823.0">
+            <Pane fx:id="panelAsignaturas" layoutX="221.0" layoutY="-2.0" prefHeight="695.0" prefWidth="823.0" visible="false">
                <children>
                   <ImageView fitHeight="820.0" fitWidth="837.0" layoutY="-126.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -1501,11 +1501,61 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="panelAdministrador" layoutX="-2.0" layoutY="-1.0" prefHeight="695.0" prefWidth="1068.0" visible="false">
+      <Pane fx:id="panelAdministrador" layoutX="-2.0" layoutY="-1.0" prefHeight="695.0" prefWidth="1068.0">
          <children>
-            <Pane fx:id="panelTareas11" layoutX="222.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0">
+            <Pane fx:id="_panelInformes" layoutX="219.0" layoutY="1.0" prefHeight="705.0" prefWidth="854.0">
                <children>
-                  <ImageView fitHeight="820.0" fitWidth="837.0" layoutY="-124.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="849.0" fitWidth="875.0" layoutY="-144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/pngegg%20(51).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="328.0" layoutY="62.0" prefHeight="77.0" prefWidth="199.0" text="Informes">
+                     <font>
+                        <Font size="50.0" />
+                     </font></Label>
+                  <Button fx:id="_boton_informe_asignatura" layoutX="83.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#generar_informe_asignatura" prefHeight="70.0" prefWidth="200.0" text="Asignaturas">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="83.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="83.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="347.0" layoutY="183.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="609.0" layoutY="183.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="347.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="609.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="347.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+                  <Button layoutX="609.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                     <font>
+                        <Font size="30.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+            <Pane fx:id="panelTareas11" layoutX="222.0" layoutY="-1.0" prefHeight="695.0" prefWidth="823.0" visible="false">
+               <children>
+                  <ImageView fitHeight="849.0" fitWidth="875.0" layoutX="-16.0" layoutY="-143.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagenes/pngegg%20(51).png" />
                      </image>
@@ -1564,24 +1614,29 @@
                         <Image url="@../../../img/casas/bandera.png" />
                      </image>
                   </ImageView>
-                  <VBox layoutX="-3.0" layoutY="332.0" prefHeight="370.0" prefWidth="227.0">
+                  <VBox layoutX="-3.0" layoutY="332.0" prefHeight="372.0" prefWidth="227.0">
                      <children>
-                        <Button fx:id="_boton_alumnos_administrador" mnemonicParsing="false" onAction="#abrir_administrador_alumnos" prefHeight="143.0" prefWidth="227.0" styleClass="boton" text="Alumnos" textFill="#e2a825">
+                        <Button fx:id="_boton_alumnos_administrador" mnemonicParsing="false" onAction="#abrir_administrador_alumnos" prefHeight="80.0" prefWidth="227.0" styleClass="boton" text="Alumnos" textFill="#e2a825">
                            <font>
                               <Font name="Harrington" size="30.0" />
                            </font>
                         </Button>
-                        <Button fx:id="_boton_profesores_administrador" mnemonicParsing="false" onMouseClicked="#abrir_administrador_profesorTabla" prefHeight="144.0" prefWidth="227.0" text="Profesores" textFill="#e2a825">
+                        <Button fx:id="_boton_profesores_administrador" mnemonicParsing="false" onMouseClicked="#abrir_administrador_profesorTabla" prefHeight="80.0" prefWidth="227.0" text="Profesores" textFill="#e2a825">
                            <font>
                               <Font name="Harrington" size="30.0" />
                            </font>
                         </Button>
-                        <Button fx:id="_boton_cerrar_sesion" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="147.0" prefWidth="227.0" text="Cerrar Sesión" textFill="#e2a825">
+                        <Button fx:id="_boton_menu_informes" mnemonicParsing="false" onMouseClicked="#cambiarInformes" prefHeight="80.0" prefWidth="227.0" text="Informes" textFill="#e2a825">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="_boton_cerrar_sesion" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="80.0" prefWidth="227.0" text="Cerrar Sesión" textFill="#e2a825">
                            <font>
                               <Font name="Harrington" size="30.0" />
                            </font>
                         </Button>
-                        <Button fx:id="_boton_salir" mnemonicParsing="false" onAction="#salirProg" prefHeight="141.0" prefWidth="227.0" text="Salir" textFill="#e2a825">
+                        <Button fx:id="_boton_salir" mnemonicParsing="false" onAction="#salirProg" prefHeight="80.0" prefWidth="227.0" text="Salir" textFill="#e2a825">
                            <font>
                               <Font name="Harrington" size="30.0" />
                            </font>
