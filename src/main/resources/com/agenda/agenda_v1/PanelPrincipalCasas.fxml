@@ -1505,49 +1505,37 @@
          <children>
             <Pane fx:id="_panelInformes" layoutX="219.0" layoutY="1.0" prefHeight="705.0" prefWidth="854.0">
                <children>
-                  <ImageView fitHeight="849.0" fitWidth="875.0" layoutY="-144.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="849.0" fitWidth="875.0" layoutX="6.0" layoutY="-134.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagenes/pngegg%20(51).png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="328.0" layoutY="62.0" prefHeight="77.0" prefWidth="199.0" text="Informes">
+                  <Label layoutX="271.0" layoutY="57.0" prefHeight="77.0" prefWidth="199.0" text="Informes">
                      <font>
                         <Font size="50.0" />
                      </font></Label>
-                  <Button fx:id="_boton_informe_asignatura" layoutX="83.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#generar_informe_asignatura" prefHeight="70.0" prefWidth="200.0" text="Asignaturas">
+                  <Button fx:id="_boton_informe_asignatura" layoutX="421.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#generar_informe_asignatura" prefHeight="70.0" prefWidth="200.0" text="Asignaturas">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <Button layoutX="83.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                  <Button layoutX="107.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#generar_informe_tareas_no_entregadas" prefHeight="70.0" prefWidth="200.0" text="Sin Entrega">
                      <font>
                         <Font size="30.0" />
                      </font></Button>
-                  <Button layoutX="83.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                  <Button layoutX="107.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#generar_informe_estudiantes" prefHeight="70.0" prefWidth="200.0" text="Estudiantes">
                      <font>
                         <Font size="30.0" />
                      </font></Button>
-                  <Button layoutX="347.0" layoutY="183.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                  <Button fx:id="Pendientes" layoutX="421.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#generar_informe_tareas_pendientes" prefHeight="70.0" prefWidth="200.0" text="Sin Corregir">
                      <font>
                         <Font size="30.0" />
                      </font></Button>
-                  <Button layoutX="609.0" layoutY="183.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                  <Button layoutX="107.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#generar_informe_Casas" prefHeight="70.0" prefWidth="200.0" text="Casas">
                      <font>
                         <Font size="30.0" />
                      </font></Button>
-                  <Button layoutX="347.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
-                     <font>
-                        <Font size="30.0" />
-                     </font></Button>
-                  <Button layoutX="609.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
-                     <font>
-                        <Font size="30.0" />
-                     </font></Button>
-                  <Button layoutX="347.0" layoutY="408.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
-                     <font>
-                        <Font size="30.0" />
-                     </font></Button>
-                  <Button layoutX="609.0" layoutY="292.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Button">
+                  <Button layoutX="421.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#generar_informe_Profesores_asignatura" prefHeight="70.0" prefWidth="200.0" text="Profesores">
                      <font>
                         <Font size="30.0" />
                      </font></Button>

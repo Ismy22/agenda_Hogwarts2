@@ -804,6 +804,8 @@ public class PanelPrincipalCasasController implements Initializable {
     private Button _boton_menu_informes;
     @FXML
     private Pane _panelInformes;
+    @FXML
+    private Button Pendientes;
 
     /**
      * Initializes the controller class.
@@ -3385,7 +3387,7 @@ public class PanelPrincipalCasasController implements Initializable {
                     vaciarPanelTodo();
                     panelProfesores.setVisible(true);
                     _panelSalaComunProfes.setVisible(true);
-                    Jopane("Añadido correctamente", "Añadir Tareas");
+                    //Jopane("Añadido correctamente", "Añadir Tareas");
                     borrar_datos_registro();
                     _tbprofesores_semanal.getItems().clear();
                     rellenar_tablaProfesor_semanal(id_profesor);
@@ -5338,6 +5340,7 @@ public class PanelPrincipalCasasController implements Initializable {
 
     }
 
+    @FXML
     public void cambiarInformes() {
         vaciarPanelTodo();
         panelMenuLateral1.setVisible(true);
@@ -5349,6 +5352,33 @@ public class PanelPrincipalCasasController implements Initializable {
     public void generar_informe_asignatura() {
         GenerarInforme c = new GenerarInforme("asignaturas.pdf", "asignaturas.jasper");
         c.generar(conn);
+        
+    }
+    @FXML
+    public void generar_informe_estudiantes() {
+        GenerarInforme a = new GenerarInforme("estudiantes.pdf", "estudiantes.jasper");
+        a.generar(conn);
+    }
+    @FXML
+    public void generar_informe_tareas_pendientes() {
+        GenerarInforme a = new GenerarInforme("Tareas_Pendientes.pdf", "Tareas_Pendientes.jasper");
+        a.generar(conn);
+    }
+    
+    @FXML
+    public void generar_informe_tareas_no_entregadas() {
+        GenerarInforme a = new GenerarInforme("no_entregadas.pdf", "no_entregadas.jasper");
+        a.generar(conn);
+    }
+    @FXML
+    public void generar_informe_Profesores_asignatura() {
+        GenerarInforme a = new GenerarInforme("asignaturas.pdf", "asignaturas.jasper");
+        a.generar(conn);
+    }
+    @FXML
+    public void generar_informe_Casas() {
+        GenerarInforme a = new GenerarInforme("report2.pdf", "report2.jasper");
+        a.generar(conn);
     }
 
 }
